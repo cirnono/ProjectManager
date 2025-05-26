@@ -1,6 +1,10 @@
 import { useActivityQueries } from "@/hooks/useActivityQueries";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
-import { canMoveTask, moveTaskDown, moveTaskUp } from "@/utils/move-task";
+import {
+  canMoveTask,
+  moveTaskDown,
+  moveTaskUp,
+} from "../../../../../utils/move-task";
 import { tasks as tasksUtils } from "../../../../../utils/tasks";
 import {
   DragEndEvent,
@@ -13,6 +17,7 @@ import {
   useSensors,
 } from "@dnd-kit/core";
 import { useState } from "react";
+import { toast } from "sonner";
 
 type SetTasksFunction = React.Dispatch<
   React.SetStateAction<ITaskWithOptions[]>
@@ -207,9 +212,7 @@ export const useBoardDragAndDrop = () => {
         ),
       });
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
+      toast("Error", {
         description: "Failed to move task. Please try again.",
       });
     }
@@ -278,9 +281,7 @@ export const useBoardDragAndDrop = () => {
         ),
       });
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
+      toast("Error", {
         description: "Failed to move task. Please try again.",
       });
     }
@@ -313,9 +314,7 @@ export const useBoardDragAndDrop = () => {
         ),
       });
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
+      toast("Error", {
         description: "Failed to move task. Please try again.",
       });
     }
@@ -422,9 +421,7 @@ export const useBoardDragAndDrop = () => {
         ),
       });
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
+      toast("Error", {
         description: "Failed to move task. Please try again.",
       });
     }
@@ -462,9 +459,7 @@ export const useBoardDragAndDrop = () => {
         ),
       });
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
+      toast("Error", {
         description: "Failed to move task. Please try again.",
       });
     }
