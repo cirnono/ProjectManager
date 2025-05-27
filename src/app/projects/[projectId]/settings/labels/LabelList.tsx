@@ -16,6 +16,7 @@ import { defaultFieldColor } from "@/consts/colors";
 import { CreateOrEditLabelForm } from "@/components/CreateOrEditLabelForm";
 import { createClient } from "../../../../../../utils/supabase/client";
 import { useProjectQueries } from "@/hooks/useProjectQueries";
+import { toast } from "sonner";
 
 interface Props {
   labels: ICustomFieldData[];
@@ -37,7 +38,6 @@ export const LabelList = ({
   const [labelId, setLabelId] = useState("");
   const [isUpdating, setIsUpdating] = useState(false);
   const searchParams = useSearchParams();
-  const { toast } = useToast();
   const supabase = createClient();
 
   useEffect(() => {
@@ -61,8 +61,7 @@ export const LabelList = ({
       if (error) throw error;
 
       onLabelUpdated?.(data);
-      toast({
-        title: "Success",
+      toast("Success", {
         description: "Label updated successfully",
       });
       setLabelId("");
@@ -70,9 +69,8 @@ export const LabelList = ({
       await reloadProjectTasks();
     } catch (error) {
       console.error("Error updating label:", error);
-      toast({
-        variant: "destructive",
-        title: "Error",
+      0;
+      toast("Error", {
         description: "Failed to update label",
       });
     } finally {
@@ -87,99 +85,95 @@ export const LabelList = ({
       if (error) throw error;
 
       onLabelDeleted?.(id);
-      toast({
-        title: "Success",
+      toast("Success", {
         description: "Label deleted successfully",
       });
       await reloadLabels();
       await reloadProjectTasks();
     } catch (error) {
       console.error("Error deleting label:", error);
-      toast({
-        variant: "destructive",
-        title: "Error",
+      toast("Error", {
         description: "Failed to delete label",
       });
     }
   };
 
-  return (
-    <div className="w-full rounded-md shadow-md">
-      <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-        <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-          {labels.map((label) => (
-            <React.Fragment key={label.id}>
-              <tr>
-                <td className="p-4 whitespace-nowrap">
-                  <LabelBadge
-                    labelText={label.label || ""}
-                    description={label.description || ""}
-                    color={label.color || defaultFieldColor}
-                  />
+  <div className="w-full rounded-md shadow-md">
+    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+      <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+        {labels.map((label) => (
+          <React.Fragment key={label.id}>
+            <tr>
+              <td className="p-4 whitespace-nowrap">
+                aw{" "}
+                <LabelBadge
+                  labelText={label.label || ""}
+                  description={label.description || ""}
+                  color={label.color || defaultFieldColor}
+                />
+              </td>
+              {!hiddenDescription && (
+                <td className="p-4 text-sm text-gray-500 dark:text-gray-400 truncate hidden md:block">
+                  {label.description}
                 </td>
-                {!hiddenDescription && (
-                  <td className="p-4 text-sm text-gray-500 dark:text-gray-400 truncate hidden md:block">
-                    {label.description}
-                  </td>
-                )}
-                <td className="p-4 whitespace-nowrap text-right text-sm font-medium">
-                  <div className="relative inline-block text-left">
-                    <div className="space-x-1 hidden lg:flex">
-                      <Button
-                        className={cn(
-                          secondaryBtnStyles,
-                          "text-xs h-8 rounded-sm"
-                        )}
-                        onClick={() => setLabelId(label.id)}
-                      >
+              )}
+              <td className="p-4 whitespace-nowrap text-right text-sm font-medium">
+                <div className="relative inline-block text-left">
+                  <div className="space-x-1 hidden lg:flex">
+                    <Button
+                      className={cn(
+                        secondaryBtnStyles,
+                        "text-xs h-8 rounded-sm"
+                      )}
+                      onClick={() => setLabelId(label.id)}
+                    >
+                      Edit
+                    </Button>
+                    <Button
+                      className={cn(
+                        secondaryBtnStyles,
+                        "text-xs text-red-600 dark:text-red-300 h-8 rounded-sm"
+                      )}
+                      onClick={() => handleDeleteLabel(label.id)}
+                    >
+                      Delete
+                    </Button>
+                  </div>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger className="lg:hidden">
+                      <Ellipsis />
+                    </DropdownMenuTrigger>
+
+                    <DropdownMenuContent>
+                      <DropdownMenuItem onClick={() => setLabelId(label.id)}>
                         Edit
-                      </Button>
-                      <Button
-                        className={cn(
-                          secondaryBtnStyles,
-                          "text-xs text-red-600 dark:text-red-300 h-8 rounded-sm"
-                        )}
+                      </DropdownMenuItem>
+                      <DropdownMenuItem
                         onClick={() => handleDeleteLabel(label.id)}
                       >
                         Delete
-                      </Button>
-                    </div>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger className="lg:hidden">
-                        <Ellipsis />
-                      </DropdownMenuTrigger>
-
-                      <DropdownMenuContent>
-                        <DropdownMenuItem onClick={() => setLabelId(label.id)}>
-                          Edit
-                        </DropdownMenuItem>
-                        <DropdownMenuItem
-                          onClick={() => handleDeleteLabel(label.id)}
-                        >
-                          Delete
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </div>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
+              </td>
+            </tr>
+            {labelId === label.id && (
+              <tr>
+                <td colSpan={4} className="p-4">
+                  <CreateOrEditLabelForm
+                    mode="edit"
+                    cancel={() => setLabelId("")}
+                    save={handleUpdateLabel}
+                    data={label}
+                    isSubmitting={isUpdating}
+                  />
                 </td>
               </tr>
-              {labelId === label.id && (
-                <tr>
-                  <td colSpan={4} className="p-4">
-                    <CreateOrEditLabelForm
-                      mode="edit"
-                      cancel={() => setLabelId("")}
-                      save={handleUpdateLabel}
-                      data={label}
-                      isSubmitting={isUpdating}
-                    />
-                  </td>
-                </tr>
-              )}
-            </React.Fragment>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+            )}
+          </React.Fragment>
+        ))}
+      </tbody>
+    </table>
+  </div>;
 };

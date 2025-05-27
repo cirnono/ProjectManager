@@ -14,12 +14,12 @@ export const projects = {
             description: projectData.description,
             readme: projectData.readme,
             created_by: userId,
+            created_at: new Date(),
             updated_at: new Date(),
             closed: false,
           })
           .select()
           .single();
-
         if (projectError) throw projectError;
 
         // 2. If not skipping default options, create them
@@ -44,6 +44,7 @@ export const projects = {
               updated_at: new Date(),
             }))
           );
+
           if (labelError) throw labelError;
         }
 
@@ -57,6 +58,7 @@ export const projects = {
                 updated_at: new Date(),
               }))
             );
+
           if (priorityError) throw priorityError;
         }
 
@@ -68,6 +70,7 @@ export const projects = {
               updated_at: new Date(),
             }))
           );
+
           if (sizeError) throw sizeError;
         }
 

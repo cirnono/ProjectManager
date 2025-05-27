@@ -1,10 +1,10 @@
-import { activities } from "../../utils/activities";
 import {
   QueryClient,
   useMutation,
   useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
+import { activities } from "../../utils/activiteis";
 
 export const useActivityQueries = (taskId: string) => {
   const queryClient = useQueryClient();
