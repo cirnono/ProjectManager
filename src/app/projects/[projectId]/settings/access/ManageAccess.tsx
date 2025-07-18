@@ -8,7 +8,7 @@ import { useState, useMemo } from "react";
 import { RoleSelect } from "./RoleSelect";
 import { useProjectAccess } from "@/hooks/useProjectAccess";
 import { useAccessStore } from "@/stores/useAccessStore";
-import { ProjectAction } from "@/consts";
+import { ProjectAction } from "../../../../../consts";
 import { useProjectOwner } from "@/hooks/useProjectOwner";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";

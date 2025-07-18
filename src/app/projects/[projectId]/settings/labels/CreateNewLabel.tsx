@@ -6,7 +6,7 @@ import { ProjectAction } from "@/consts";
 import { useProjectAccess } from "@/hooks/useProjectAccess";
 import { useProjectQueries } from "@/hooks/useProjectQueries";
 import { cn } from "@/lib/utils";
-import { createClient } from "../../../../../../utils/supabase/client";
+import { createClient } from "@/utils/supabase/client";
 import React, { useState } from "react";
 import { toast } from "sonner";
 

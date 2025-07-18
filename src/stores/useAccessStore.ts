@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { createClient } from "../../utils/supabase/client";
-import { ProjectAction } from "@/consts";
+import { ProjectAction } from "../consts";
 
 interface AccessState {
   permissions: Record<string, Record<ProjectAction, boolean>>;

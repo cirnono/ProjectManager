@@ -2,7 +2,7 @@
 import { successBtnStyles } from "@/app/commonStyles";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ProjectAction } from "@/consts";
+import { ProjectAction } from "../../../../consts";
 import { cn } from "@/lib/utils";
 import { createClient } from "../../../../../utils/supabase/client";
 import { tasks as taskUtils } from "../../../../../utils/tasks";

@@ -13,7 +13,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { labelColors } from "@/consts/colors";
+import { labelColors } from "../consts/colors";
 
 const defaultColor = labelColors[1];
 
@@ -135,8 +135,8 @@ export const CreateOrEditLabelForm = ({
             {isSubmitting
               ? "Submitting..."
               : mode === "edit"
-              ? "Update label"
-              : "Create label"}
+                ? "Update label"
+                : "Create label"}
           </Button>
         </div>
       </div>
