@@ -1,4 +1,4 @@
-import { tasks } from "../../utils/tasks";
+import { tasks } from "@/utils/tasks";
 import {
   QueryClient,
   useMutation,

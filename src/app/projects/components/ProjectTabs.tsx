@@ -4,7 +4,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PanelsTopLeft, SquareKanban } from "lucide-react";
 import SearchAndButton from "../Search";
 import { ProjectList } from "../ProjectList";
-import { IProject } from "../../../../types";
 
 interface ProjectTabsProps {
   activeProjects: IProject[];

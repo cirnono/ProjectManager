@@ -1,4 +1,4 @@
-import { projects } from "../../utils/projects";
+import { projects } from "@/utils/projects";
 import { QueryClient, useQuery } from "@tanstack/react-query";
 
 export const useProjectOwner = (projectId: string) => {

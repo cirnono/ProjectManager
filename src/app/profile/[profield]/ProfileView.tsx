@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ExternalLink, Edit } from "lucide-react";
-import type { IUser } from "../../../../utils/users";
+import type { IUser } from "@/utils/users";
 
 interface ProfileViewProps {
   user: IUser;

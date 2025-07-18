@@ -1,4 +1,4 @@
-import { createClient } from "../..//utils/supabase/client";
+import { createClient } from "@/utils/supabase/client";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 

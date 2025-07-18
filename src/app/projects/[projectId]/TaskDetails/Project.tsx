@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { DatePicker } from "./DatePicker";
 import { CustomFieldTagRenderer } from "@/components/CustomFieldTagRenderer";
-import { tasks as tasksUtils } from "../../../../../utils/tasks";
+import { tasks as tasksUtils } from "@/utils/tasks";
 import { toast } from "sonner";
 
 export const Project = () => {

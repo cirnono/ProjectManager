@@ -4,7 +4,7 @@ import {
   useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
-import { activities } from "../../utils/activiteis";
+import { activities } from "@/utils/activiteis";
 
 export const useActivityQueries = (taskId: string) => {
   const queryClient = useQueryClient();

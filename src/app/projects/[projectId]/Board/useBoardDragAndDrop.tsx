@@ -1,11 +1,7 @@
 import { useActivityQueries } from "@/hooks/useActivityQueries";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
-import {
-  canMoveTask,
-  moveTaskDown,
-  moveTaskUp,
-} from "../../../../../utils/move-task";
-import { tasks as tasksUtils } from "../../../../../utils/tasks";
+import { canMoveTask, moveTaskDown, moveTaskUp } from "@/utils/move-task";
+import { tasks as tasksUtils } from "@/utils/tasks";
 import {
   DragEndEvent,
   DragOverEvent,

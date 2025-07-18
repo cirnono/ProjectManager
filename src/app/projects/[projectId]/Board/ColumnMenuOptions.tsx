@@ -24,7 +24,7 @@ import { cn } from "@/lib/utils";
 import { Dialog } from "@radix-ui/react-dialog";
 import { Ellipsis, EyeOff, Pencil, Trash } from "lucide-react";
 import { useState } from "react";
-import { columns } from "../../../../../utils/columns";
+import { columns } from "@/utils/columns";
 import { toast } from "sonner";
 
 interface Props {

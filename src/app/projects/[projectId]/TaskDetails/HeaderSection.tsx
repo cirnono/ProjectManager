@@ -6,7 +6,7 @@ import { EditableTitle } from "./EditableTitle";
 import { TaskActionsMenu } from "./TaskActionsMenu";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { usePathname } from "next/navigation";
-import { tasks } from "../../../../../utils/tasks";
+import { tasks } from "@/utils/tasks";
 
 interface Props {
   title: string;

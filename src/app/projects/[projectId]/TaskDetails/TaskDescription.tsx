@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { UserCard } from "@/components/UserCard";
 import { useTaskQueries } from "@/hooks/useTaskQueries";
 import { cn } from "@/lib/utils";
-import { formatRelativeTime } from "../../../../../utils/date";
+import { formatRelativeTime } from "@/utils/date";
 import { Pen } from "lucide-react";
 import { useState } from "react";
 import { useTaskDetails } from "../Board/TaskDetailsContext";

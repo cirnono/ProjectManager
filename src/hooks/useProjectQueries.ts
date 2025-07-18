@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { projects } from "../../utils/projects";
-import { tasks } from "../../utils/tasks";
+import { projects } from "@/utils/projects";
+import { tasks } from "@/utils/tasks";
 
 export const useProjectQueries = (projectId: string) => {
   const queryClient = useQueryClient();

@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import type { User } from "@supabase/supabase-js";
 import { usePathname } from "next/navigation";
 import { UserMenu } from "./UserMenu";
-import { createClient } from "../../utils/supabase/client";
+import { createClient } from "@/utils/supabase/client";
 
 interface HeaderProps {
   className?: string;

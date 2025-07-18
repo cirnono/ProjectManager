@@ -14,9 +14,9 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { auth } from "../../../utils/auth";
+import { auth } from "@/utils/auth";
 import { toast } from "sonner";
-import { getAuthError } from "../../../utils/auth-errors";
+import { getAuthError } from "@/utils/auth-errors";
 import { Icons } from "@/components/Icons";
 
 export function ForgotPasswordForm() {

@@ -30,8 +30,8 @@ import { v4 as uid } from "uuid";
 import { secondaryBtnStyles, successBtnStyles } from "../commonStyles";
 import { LabelList } from "../projects/[projectId]/settings/labels/LabelList";
 import { useRouter } from "next/navigation";
-import { projects } from "../../../utils/projects";
-import { createClient } from "../../../utils/supabase/client";
+import { projects } from "@/utils/projects";
+import { createClient } from "@/utils/supabase/client";
 import { toast } from "sonner";
 
 interface Props {

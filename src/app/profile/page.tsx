@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
-import { createClient } from "../../../utils/supabase/client";
-import { users } from "../../../utils/users";
+import { createClient } from "@/utils/supabase/client";
+import { users } from "@/utils/users";
 import { ProfileForm } from "./ProfileForm";
 import { useEffect, useState } from "react";
 import { User } from "@supabase/supabase-js";

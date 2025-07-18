@@ -15,9 +15,9 @@ import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import React, { useState } from "react";
 import { toast } from "sonner";
-import { auth } from "../../../utils/auth";
+import { auth } from "@/utils/auth";
 import { useRouter } from "next/navigation";
-import { getAuthError } from "../../../utils/auth-errors";
+import { getAuthError } from "@/utils/auth-errors";
 import { Icons } from "@/components/Icons";
 
 export function CreateAccountForm() {

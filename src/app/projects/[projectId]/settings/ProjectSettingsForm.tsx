@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Textarea } from "@/components/ui/textarea";
 
 import { cn } from "@/lib/utils";
-import { projects } from "../../../../../utils/projects";
+import { projects } from "@/utils/projects";
 import { secondaryBtnStyles } from "@/app/commonStyles";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -16,7 +16,7 @@ import { DeleteProjectDialog } from "../../components/DeleteProjectDialog";
 import TextEditor from "@/components/TextEditor";
 import { useProjectAccess } from "@/hooks/useProjectAccess";
 import { useAccessStore } from "@/stores/useAccessStore";
-import { ProjectAction } from "../../../../consts";
+import { ProjectAction } from "@/consts";
 import { toast } from "sonner";
 
 interface ProjectSettingsFormProps {

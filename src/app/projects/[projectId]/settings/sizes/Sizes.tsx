@@ -5,11 +5,8 @@ import { CustomFieldOptions } from "@/components/CustomFieldOptions";
 import { Button } from "@/components/ui/button";
 import { useProjectQueries } from "@/hooks/useProjectQueries";
 import { cn } from "@/lib/utils";
-import {
-  compareAndUpdateItems,
-  hasChanges,
-} from "../../../../../../utils/array-utils";
-import { createClient } from "../../../../../../utils/supabase/client";
+import { compareAndUpdateItems, hasChanges } from "@/utils/array-utils";
+import { createClient } from "@/utils/supabase/client";
 import { useState } from "react";
 import { toast } from "sonner";
 

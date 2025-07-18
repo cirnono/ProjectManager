@@ -1,4 +1,4 @@
-import { comments } from "../../utils/comments";
+import { comments } from "@/utils/comments";
 import {
   QueryClient,
   useMutation,

@@ -1,9 +1,9 @@
-import { createClient } from "../../../utils/supabase/server";
-import { users, type IUser } from "../../../utils/users";
+import { createClient } from "@/utils/supabase/server";
+import { users, type IUser } from "@/utils/users";
 import { AccountDetails } from "./AccountDetails";
 import { Projects } from "./Project";
 import { redirect } from "next/navigation";
-import { projects } from "../../../utils/projects";
+import { projects } from "@/utils/projects";
 
 export default async function ProjectsPage() {
   const supabase = await createClient();

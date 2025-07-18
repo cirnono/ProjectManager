@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 import { toast } from "sonner";
-import { auth, type AuthError } from "../../../../utils/auth";
+import { auth, type AuthError } from "@/utils/auth";
 
 export function ResetPasswordForm() {
   const [isLoading, setIsLoading] = useState(false);

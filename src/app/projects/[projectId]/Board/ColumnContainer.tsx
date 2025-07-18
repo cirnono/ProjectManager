@@ -2,10 +2,10 @@
 import { successBtnStyles } from "@/app/commonStyles";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ProjectAction } from "../../../../consts";
+import { ProjectAction } from "@/consts";
 import { cn } from "@/lib/utils";
-import { createClient } from "../../../../../utils/supabase/client";
-import { tasks as taskUtils } from "../../../../../utils/tasks";
+import { createClient } from "@/utils/supabase/client";
+import { tasks as taskUtils } from "@/utils/tasks";
 import { UniqueIdentifier } from "@dnd-kit/core";
 import {
   SortableContext,
@@ -18,7 +18,7 @@ import { ColumnLabelColor } from "./ColumnLabelColor";
 import { ColumnMenuOptions } from "./ColumnMenuOptions";
 import { TaskItem } from "./TaskItem";
 import { useDroppable } from "@dnd-kit/core";
-import { getLowestColumnPosition } from "../../../../../utils/sort";
+import { getLowestColumnPosition } from "@/utils/sort";
 import {
   Tooltip,
   TooltipContent,

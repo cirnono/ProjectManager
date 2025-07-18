@@ -15,8 +15,8 @@ import Link from "next/link";
 import { OAuthSignIn } from "@/components/OAuthSignIn";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { auth } from "../../../utils/auth";
-import { getAuthError } from "../../../utils/auth-errors";
+import { auth } from "@/utils/auth";
+import { getAuthError } from "@/utils/auth-errors";
 import { toast } from "sonner";
 import { Icons } from "@/components/Icons";
 

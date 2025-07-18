@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { z } from "zod";
-import { IUser, users } from "../../../utils/users";
+import { IUser, users } from "@/utils/users";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFieldArray, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";

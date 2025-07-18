@@ -1,5 +1,5 @@
-import { users, type IUser } from "../../../../utils/users";
-import { createClient } from "../../../../utils/supabase/server";
+import { users, type IUser } from "@/utils/users";
+import { createClient } from "@/utils/supabase/server";
 import { notFound } from "next/navigation";
 import { ProfileView } from "./ProfileView";
 

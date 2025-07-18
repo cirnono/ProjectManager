@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { createClient } from "../../../../utils/supabase/server";
-import { users } from "../../../../utils/users";
+import { createClient } from "@/utils/supabase/server";
+import { users } from "@/utils/users";
 
 export async function GET(request: Request) {
   try {
